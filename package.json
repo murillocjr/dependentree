@@ -12,6 +12,7 @@
   "repository": "git@github.com:square/dependentree.git",
   "sideEffects": false,
   "scripts": {
+    "start-dependencies": "yarn dev-init & yarn build-dev & yarn start",
     "start": "yarn serve & yarn build-watch",
     "serve": "live-server dev",
     "lint": "eslint --cache .",
@@ -47,7 +48,8 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "d3": "^6.2.0"
+    "d3": "^6.2.0",
+    "html2canvas": "^1.4.1"
   },
   "husky": {
     "hooks": {

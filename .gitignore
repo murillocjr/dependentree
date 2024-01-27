@@ -6,3 +6,5 @@ dev/
 tests/page/
 .eslintcache
 yarn-error.log
+package-lock.json
+data/royals.js

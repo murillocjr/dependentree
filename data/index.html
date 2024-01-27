@@ -4,30 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DependenTree</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-
-      html, body {
-        height: 800px;
-        width: 1200px;
-      }
-
-      #tree {
-        height: 800px;
-        width: 1200px;
-      }
-    </style>
   </head>
   <body>
-    <div id="tree"></div>
+    
+    <div id="tree" style="width: 3000px"></div>
+    --->
     <script src="main.js" type="text/javascript"></script>
     <script src="testData.js" type="text/javascript"></script>
-    <script>
-      const { royals, rps, BinaryTreeMaker, LinkedListMaker } = testData;
+
+    <button onclick="exportImage();">Export</button>
+
+    <script>        
+
+      function exportImage() {
+      	html2canvas(
+      		document.querySelector('#tree')).then(canvas=>{
+      				console.log("Hi4");
+      				document.body.appendChild(canvas)
+      			}
+      		);	
+      }
+      
+      const { royals, rps, BinaryTreeMaker, LinkedListMaker, html2canvas } = testData;
 
       // default options
       const options = {
@@ -45,7 +43,7 @@
 
         // appearance options
 
-        // containerWidthMultiplier: 4,
+        // containerWidthMultiplier: 8,
         // containerWidthInPx: null,
         // marginTop: 60,
         // marginRight: 120,
@@ -88,11 +86,11 @@
 
       };
 
-      // const tree = new DependenTree('div#tree', options);
+      const tree = new DependenTree('div#tree', options);
 
 
-      // tree.addEntities(royals);
-      // tree.setTree('Elizabeth II', 'downstream');
+      tree.addEntities(royals);
+      tree.setTree('MBBKModuleManager','upstream')
 
       // tree.setTree('George');
 
